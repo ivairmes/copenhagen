@@ -3182,3 +3182,7 @@ CPHEditor.prototype.getAnnotationsAt = function (lineNumber) {
 CPHEditor.prototype.syncClients = function () {
   // TODO: add me
 };
+
+// --- ESM-мост -------------------------------------------------------------
+window.CPHEditor = CPHEditor;
+export default CPHEditor;

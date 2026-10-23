@@ -321,3 +321,6 @@ CPHCursor.prototype.direction = function () {
     return 'rtl';
   }
 };
+
+window.CPHCursor = CPHCursor;
+export default CPHCursor;

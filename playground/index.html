@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Copenhagen Playground (Vite)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1>Copenhagen — Vite playground</h1>
+    <div class="editor" data-language="javascript">// try editing me
+const greet = (name) => `hello ${name}`;
+console.log(greet('world'));</div>
+    <script type="module">
+      import Copenhagen from '../src/entry.js';
+      window.addEventListener('DOMContentLoaded', () => {
+        window.editors = Copenhagen.initSelectorAll('.editor');
+      });
+    </script>
+  </body>
+</html>

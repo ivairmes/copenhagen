@@ -1,0 +1,7 @@
+// Точка входа стилей Copenhagen (замена склейки *.scss в functions/compile.js)
+@import 'variables';
+
+@use '../controls/CPHEditor/CPHContextMenu/CPHContextMenu.scss' as *;
+@use '../controls/CPHEditor/CPHFindReplace/CPHFindReplace.scss' as *;
+@use '../controls/CPHEditor/CPHEditor.scss' as *;
+@use './vendor-highlight.scss' as *;

@@ -252,3 +252,6 @@ CodeCompleter.prototype.suggest = function (line, language, endOffset) {
     cursorLength: suggest.cursorLength
   };
 };
+
+window.CodeCompleter = CodeCompleter;
+export default CodeCompleter;

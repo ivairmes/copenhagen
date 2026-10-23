@@ -51,3 +51,10 @@ var timeit = function () {
     t0 = t1;
   }
 }
+
+// --- ESM-мост: легаси-код обращается к этим функциям как к глобалам -------
+window.safeHTML = safeHTML;
+window.isMobile = isMobile;
+window.isMac = isMac;
+window.isWindows = isWindows;
+window.isLinux = isLinux;

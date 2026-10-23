@@ -545,3 +545,11 @@ Control.prototype.hasParent = function (parent) {
   }
   return hasParent;
 };
+
+// --- ESM-мост -------------------------------------------------------------
+// Легаси-код (CPHEditor и др.) ссылается на Control/EventHandler как на
+// глобальные функции; в модульном скоупе их нужно явно поднять в window.
+window.Control = Control;
+window.EventHandler = EventHandler;
+
+export { Control, EventHandler };

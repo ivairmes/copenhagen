@@ -147,3 +147,6 @@ CPHFindReplace.prototype.isCaseSensitive = function () {
 CPHFindReplace.prototype.isRegex = function () {
   return this.selector('a[name="regex"]').classList.contains('on');
 };
+
+window.CPHFindReplace = CPHFindReplace;
+export default CPHFindReplace;

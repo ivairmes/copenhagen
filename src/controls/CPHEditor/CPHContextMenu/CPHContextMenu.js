@@ -197,3 +197,6 @@ CPHContextMenu.prototype.generateShortcut = function (shortcut) {
     )(key);
   }).join('&nbsp;+&nbsp;');
 };
+
+window.CPHContextMenu = CPHContextMenu;
+export default CPHContextMenu;

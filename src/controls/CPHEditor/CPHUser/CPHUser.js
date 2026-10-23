@@ -428,3 +428,6 @@ CPHUser.prototype.moveCursors = function (value, direction, amount, expandSelect
   this.collapseCursors();
   return this.cursors;
 };
+
+window.CPHUser = CPHUser;
+export default CPHUser;

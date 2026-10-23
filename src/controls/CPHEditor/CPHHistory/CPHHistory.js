@@ -180,3 +180,6 @@ CPHHistory.prototype.replay = function (user, amount) {
   }
   return entries;
 };
+
+window.CPHHistory = CPHHistory;
+export default CPHHistory;
