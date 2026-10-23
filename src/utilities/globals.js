@@ -53,8 +53,11 @@ var timeit = function () {
 }
 
 // --- ESM-мост: легаси-код обращается к этим функциям как к глобалам -------
+// (в старом конкатенационном билде они жили в общей области видимости)
 window.safeHTML = safeHTML;
 window.isMobile = isMobile;
 window.isMac = isMac;
 window.isWindows = isWindows;
 window.isLinux = isLinux;
+window._unsafe_uuidv4 = _unsafe_uuidv4;
+window.timeit = timeit;

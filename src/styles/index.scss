@@ -1,7 +1,14 @@
-// Точка входа стилей Copenhagen (замена склейки *.scss в functions/compile.js)
+// Точка входа стилей Copenhagen (замена склейки *.scss в functions/compile.js).
+// Порядок импортов = порядок конкатенации старого билда: сначала переменные,
+// затем контролы (алфавитно), затем тема highlight.js.
+// @import сохраняет легаси-сементику общего скоупа: частичные файлы читают
+// $colors/$size-* без явного @use (как в исходном node-sass-билде).
+// ВАЖНО: CPHFindReplace.scss использует переменные из CPHEditor.scss
+// ($editor-scrollbar-width-active), поэтому редактор идёт раньше —
+// порядок соответствует алфавиту склейки старого compile.js
+// (...ContextMenu.scss, ...CPHEditor.scss, ...CPHFindReplace.scss...).
 @import 'variables';
-
-@use '../controls/CPHEditor/CPHContextMenu/CPHContextMenu.scss' as *;
-@use '../controls/CPHEditor/CPHFindReplace/CPHFindReplace.scss' as *;
-@use '../controls/CPHEditor/CPHEditor.scss' as *;
-@use './vendor-highlight.scss' as *;
+@import '../controls/CPHEditor/CPHContextMenu/CPHContextMenu.scss';
+@import '../controls/CPHEditor/CPHEditor.scss';
+@import '../controls/CPHEditor/CPHFindReplace/CPHFindReplace.scss';
+@import 'vendor-highlight.scss';

@@ -18,6 +18,17 @@ hljs.registerLanguage('xml', html);
 hljs.registerLanguage('json', json);
 hljs.registerLanguage('markdown', markdown);
 
+// Мост легаси-API: CPHEditor.formatters вызывает hljs.highlight(lang, code)
+// (сигнатура v9, деприкейтирована в v10.7+). Пробрасываем в новый API
+// highlight(code, {language}) — без console-предупреждений на каждую строку.
+const _hlHighlight = hljs.highlight.bind(hljs);
+hljs.highlight = function (arg1, arg2) {
+  if (typeof arg1 === 'string' && typeof arg2 === 'string') {
+    return _hlHighlight(arg2, { language: arg1 });
+  }
+  return _hlHighlight(arg1, arg2);
+};
+
 // Глобальные утилиты и каркас (легаси-код рассчитывает на глобальную область)
 import './utilities/globals.js';
 import { Template } from './template/Template.js';
